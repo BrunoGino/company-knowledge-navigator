@@ -39,5 +39,5 @@ const resolvers = {
 };
 
 const graphqlServer = new ApolloServer({ typeDefs, resolvers });
-const { url } = await startStandaloneServer(graphqlServer, { listen: { port: 8080 } })
+const { url } = await startStandaloneServer(graphqlServer, { listen: { port: Number(process.env.PORT) } })
 console.log(`🚀  Server ready at: ${url}`);
