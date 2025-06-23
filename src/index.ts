@@ -1,7 +1,6 @@
 import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 
-
 const typeDefs = `#graphql
   # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
 
@@ -20,24 +19,26 @@ const typeDefs = `#graphql
 `;
 
 const books = [
-    {
-        title: 'The Awakening',
-        author: 'Kate Chopin',
-    },
-    {
-        title: 'City of Glass',
-        author: 'Paul Auster',
-    },
+  {
+    title: 'The Awakening',
+    author: 'Kate Chopin',
+  },
+  {
+    title: 'City of Glass',
+    author: 'Paul Auster',
+  },
 ];
 
 // Resolvers define how to fetch the types defined in your schema.
 // This resolver retrieves books from the "books" array above.
 const resolvers = {
-    Query: {
-        books: () => books,
-    },
+  Query: {
+    books: () => books,
+  },
 };
 
 const graphqlServer = new ApolloServer({ typeDefs, resolvers });
-const { url } = await startStandaloneServer(graphqlServer, { listen: { port: Number(process.env.PORT) } })
+const { url } = await startStandaloneServer(graphqlServer, {
+  listen: { port: Number(process.env.PORT) },
+});
 console.log(`🚀  Server ready at: ${url}`);

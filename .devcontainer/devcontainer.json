@@ -1,0 +1,26 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "forwardPorts": [
+    8080
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "apollographql.vscode-apollo",
+        "ms-azuretools.vscode-docker",
+        "editorconfig.editorconfig",
+        "github.vscode-github-actions",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {
+      "version": "latest"
+    }
+  }
+}

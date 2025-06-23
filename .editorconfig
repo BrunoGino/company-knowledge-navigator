@@ -4,7 +4,8 @@ root = true
 end_of_line = lf
 insert_file_newline = true
 
-[*.{ts,json,yaml,yml}]
+[*.{js,ts,json,yaml,yml}]
+trim_trailing_whitespace = true
 charset = utf-8
 indent_style = space
 indent_size = 2
