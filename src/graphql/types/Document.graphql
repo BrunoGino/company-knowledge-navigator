@@ -1,0 +1,11 @@
+type Document {
+  id: String
+  title: String
+  fileUrl: String
+  topics: String
+  tools: String
+  createdBy: Author
+  createdAt: String
+  updatedAt: String
+  updatedBy: String
+}
