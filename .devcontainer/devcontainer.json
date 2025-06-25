@@ -1,5 +1,8 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/typescript-node",
+  "name": "nodejs-neo4j",
+  "dockerComposeFile": "docker-compose.yml",
+  "workspaceFolder": "/workspaces/",
+  "service": "app",
   "forwardPorts": [
     8080
   ],
@@ -14,7 +17,8 @@
         "redhat.vscode-yaml",
         "streetsidesoftware.code-spell-checker",
         "dbaeumer.vscode-eslint",
-        "esbenp.prettier-vscode"
+        "esbenp.prettier-vscode",
+        "neo4j-extensions.neo4j-for-vscode"
       ]
     }
   },

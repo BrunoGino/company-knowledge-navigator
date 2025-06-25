@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../..:/workspace:cached
+    command: sleep infinity
+    depends_on:
+      - db
+    network_mode: service:db
+
+  db:
+    image: neo4j:2025.05-community
+    restart: unless-stopped
+    environment:
+      NEO4J_AUTH: neo4j/password123
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    volumes:
+      - neo4j_data:/data/db
+    networks:
+      - devnet
+
+volumes:
+  neo4j_data:
+
+networks:
+  devnet:
