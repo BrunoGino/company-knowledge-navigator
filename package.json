@@ -10,10 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@apollo/server": "4.12.2",
-    "@neo4j/graphql": "7.2.0",
     "express": "5.1.0",
-    "graphql": "16.11.0",
     "neo4j-driver": "5.28.1",
     "uuid": "11.1.0"
   },

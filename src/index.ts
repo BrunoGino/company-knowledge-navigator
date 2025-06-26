@@ -1,44 +1,11 @@
-import { ApolloServer } from '@apollo/server';
-import { startStandaloneServer } from '@apollo/server/standalone';
+import express from 'express';
 
-const typeDefs = `#graphql
-  # Comments in GraphQL strings (such as this one) start with the hash (#) symbol.
+const app = express();
 
-  # This "Book" type defines the queryable fields for every book in our data source.
-  type Book {
-    title: String
-    author: String
-  }
-
-  # The "Query" type is special: it lists all of the available queries that
-  # clients can execute, along with the return type for each. In this
-  # case, the "books" query returns an array of zero or more Books (defined above).
-  type Query {
-    books: [Book]
-  }
-`;
-
-const books = [
-  {
-    title: 'The Awakening',
-    author: 'Kate Chopin',
-  },
-  {
-    title: 'City of Glass',
-    author: 'Paul Auster',
-  },
-];
-
-// Resolvers define how to fetch the types defined in your schema.
-// This resolver retrieves books from the "books" array above.
-const resolvers = {
-  Query: {
-    books: () => books,
-  },
-};
-
-const graphqlServer = new ApolloServer({ typeDefs, resolvers });
-const { url } = await startStandaloneServer(graphqlServer, {
-  listen: { port: Number(process.env.PORT) },
+app.post('/document', (req, res) => {
+  res.send(JSON.stringify({ message: 'hi' }));
 });
-console.log(`🚀  Server ready at: ${url}`);
+const port = Number(process.env.PORT);
+app.listen(port, () => {
+  console.log(`App listening on port ${port}`);
+});
