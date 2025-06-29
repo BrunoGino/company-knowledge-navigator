@@ -20,6 +20,7 @@ const addDocument = async (
   );
 
   // TODO: read PDF to text -> transform text to chunks -> save chunks to ChromaDB
+  // TODO: inspect document with AI to get the tools MENTIONED by the document and the TOPICS contained
 
   res.json(result);
 };
