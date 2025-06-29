@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import documentRepository from '../repository/DocumentRepository.js';
 import { Document } from '../model/Document.js';
+import { ChromaDBAdapter } from '../adapter/ChromaDBAdapter.js';
 
 interface AddDocumentRequestBody {
   title: string;
@@ -18,7 +19,21 @@ const addDocument = async (
     parseRequestBodyToDocument(req.body)
   );
 
+  // TODO: read PDF to text -> transform text to chunks -> save chunks to ChromaDB
+
   res.json(result);
+};
+
+const searchDocument = async (
+  req: Request<never, never, never, { question: string }>,
+  res: Response
+) => {
+  const questionQuery = req.query.question;
+
+  const embeddingsDb = new ChromaDBAdapter('company-documents');
+  const results = await embeddingsDb.queryDocumentsByTexts([questionQuery]);
+
+  res.json(results);
 };
 
 const parseRequestBodyToDocument = (
@@ -33,4 +48,4 @@ const parseRequestBodyToDocument = (
   };
 };
 
-export { addDocument };
+export { addDocument, searchDocument };

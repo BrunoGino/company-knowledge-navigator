@@ -18,7 +18,7 @@ class DocumentRepository {
   }
 
   public async createDocument(document: Document) {
-    return await this.neo4jAdapter.runTransaction<Document>(
+    const result = (await this.neo4jAdapter.runTransaction<Document>(
       `//cypher
        WITH $title AS title,
             $id AS id,
@@ -60,7 +60,8 @@ class DocumentRepository {
         tools: document.tools,
         authorId: document.authorId,
       }
-    );
+    )) as Document;
+    return result;
   }
 }
 
