@@ -1,0 +1,11 @@
+{
+  "firstName": "Gary",
+  "lastName": "Michael",
+  "hiredIn": "2012-06-10T00:00:00",
+  "birthDate": "1992-08-07T00:00:00",
+  "genre": "male",
+  "role": "Director",
+  "teams": [],
+  "topics": ["Managing", "Negotiation", "Security", "Corporate Architecture"],
+  "tools": ["Visio", "Word", "Excel"]
+}

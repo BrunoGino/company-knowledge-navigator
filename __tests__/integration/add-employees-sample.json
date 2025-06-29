@@ -1,0 +1,522 @@
+[
+  {
+    "firstName": "Ivy",
+    "lastName": "Jackson",
+    "hiredIn": "2022-10-03T00:00:00",
+    "birthDate": "1981-06-22T00:00:00",
+    "genre": "non-binary",
+    "role": "Developer",
+    "teams": [
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Analyst",
+        "startDate": "2020-07-26T00:00:00",
+        "endDate": "2021-05-31T00:00:00"
+      }
+    ],
+    "topics": [
+      "DevOps",
+      "Security",
+      "UI/UX"
+    ],
+    "tools": [
+      "GitHub"
+    ]
+  },
+  {
+    "firstName": "Grace",
+    "lastName": "Martin",
+    "hiredIn": "2022-05-26T00:00:00",
+    "birthDate": "1984-11-11T00:00:00",
+    "genre": "female",
+    "role": "Scrum Master",
+    "teams": [
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Designer",
+        "startDate": "2021-02-26T00:00:00",
+        "endDate": "2022-04-02T00:00:00"
+      },
+      {
+        "id": "74d03257-f9c6-4e10-8b9c-45bd332f416c",
+        "name": "Team Delta",
+        "role": "Scrum Master",
+        "startDate": "2017-11-10T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "Databases",
+      "Machine Learning"
+    ],
+    "tools": [
+      "Postman"
+    ]
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "White",
+    "hiredIn": "2012-07-15T00:00:00",
+    "birthDate": "1973-10-19T00:00:00",
+    "genre": "female",
+    "role": "QA Engineer",
+    "teams": [
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Project Manager",
+        "startDate": "2022-02-02T00:00:00",
+        "endDate": "2022-11-22T00:00:00"
+      },
+      {
+        "id": "ded18e3a-9f81-4e02-bec1-264854338fe1",
+        "name": "Team Alpha",
+        "role": "QA Engineer",
+        "startDate": "2019-01-26T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "UI/UX",
+      "Databases"
+    ],
+    "tools": [
+      "Neo4j",
+      "Figma",
+      "Jira"
+    ]
+  },
+  {
+    "firstName": "David",
+    "lastName": "Martin",
+    "hiredIn": "2015-07-28T00:00:00",
+    "birthDate": "1982-06-07T00:00:00",
+    "genre": "male",
+    "role": "Project Manager",
+    "teams": [
+      {
+        "id": "88fd8330-b9e0-494c-a887-830dea7b0347",
+        "name": "Team Alpha",
+        "role": "Developer",
+        "startDate": "2023-07-28T00:00:00",
+        "endDate": "2024-09-16T00:00:00"
+      },
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Project Manager",
+        "startDate": "2023-02-14T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "Agile",
+      "Machine Learning",
+      "Microservices"
+    ],
+    "tools": [
+      "Docker"
+    ]
+  },
+  {
+    "firstName": "Eva",
+    "lastName": "Martin",
+    "hiredIn": "2012-03-27T00:00:00",
+    "birthDate": "1979-08-01T00:00:00",
+    "genre": "non-binary",
+    "role": "QA Engineer",
+    "teams": [
+      {
+        "id": "40204774-1c62-42a9-8753-29d70d52712e",
+        "name": "Team Alpha",
+        "role": "Project Manager",
+        "startDate": "2016-03-01T00:00:00",
+        "endDate": "2017-03-10T00:00:00"
+      },
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Analyst",
+        "startDate": "2016-08-02T00:00:00",
+        "endDate": "2017-04-23T00:00:00"
+      }
+    ],
+    "topics": [
+      "Agile"
+    ],
+    "tools": [
+      "Jira",
+      "GitHub",
+      "Neo4j"
+    ]
+  },
+  {
+    "firstName": "Grace",
+    "lastName": "Brown",
+    "hiredIn": "2012-03-20T00:00:00",
+    "birthDate": "1970-01-03T00:00:00",
+    "genre": "female",
+    "role": "Analyst",
+    "teams": [
+      {
+        "id": "b7367d2e-8fbc-4122-a38c-2ad1419059ec",
+        "name": "Team Beta",
+        "role": "Designer",
+        "startDate": "2015-05-23T00:00:00",
+        "endDate": "2016-09-15T00:00:00"
+      },
+      {
+        "id": "74d03257-f9c6-4e10-8b9c-45bd332f416c",
+        "name": "Team Delta",
+        "role": "QA Engineer",
+        "startDate": "2016-11-09T00:00:00",
+        "endDate": "2017-06-28T00:00:00"
+      }
+    ],
+    "topics": [
+      "Machine Learning"
+    ],
+    "tools": [
+      "Neo4j",
+      "Figma",
+      "Kubernetes"
+    ]
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Thomas",
+    "hiredIn": "2012-11-20T00:00:00",
+    "birthDate": "1993-07-21T00:00:00",
+    "genre": "male",
+    "role": "QA Engineer",
+    "teams": [
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Scrum Master",
+        "startDate": "2022-12-08T00:00:00",
+        "endDate": "2025-01-16T00:00:00"
+      }
+    ],
+    "topics": [
+      "Microservices",
+      "Security"
+    ],
+    "tools": [
+      "GitHub"
+    ]
+  },
+  {
+    "firstName": "David",
+    "lastName": "Anderson",
+    "hiredIn": "2011-08-15T00:00:00",
+    "birthDate": "1973-11-25T00:00:00",
+    "genre": "female",
+    "role": "Developer",
+    "teams": [
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Developer",
+        "startDate": "2020-10-16T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "Agile",
+      "Microservices",
+      "UI/UX"
+    ],
+    "tools": [
+      "Kubernetes",
+      "Figma",
+      "Jira",
+      "Neo4j"
+    ]
+  },
+  {
+    "firstName": "David",
+    "lastName": "Thomas",
+    "hiredIn": "2022-11-01T00:00:00",
+    "birthDate": "1987-09-28T00:00:00",
+    "genre": "non-binary",
+    "role": "Designer",
+    "teams": [
+      {
+        "id": "d9109eee-df4d-4b3f-9242-d0d2899df456",
+        "name": "Team Alpha",
+        "role": "Scrum Master",
+        "startDate": "2021-02-28T00:00:00",
+        "endDate": "2023-03-01T00:00:00"
+      },
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "QA Engineer",
+        "startDate": "2020-10-10T00:00:00",
+        "endDate": "2021-10-31T00:00:00"
+      }
+    ],
+    "topics": [
+      "Machine Learning",
+      "Microservices",
+      "Security",
+      "Agile"
+    ],
+    "tools": [
+      "Docker"
+    ]
+  },
+  {
+    "firstName": "David",
+    "lastName": "Brown",
+    "hiredIn": "2016-02-11T00:00:00",
+    "birthDate": "1998-03-22T00:00:00",
+    "genre": "female",
+    "role": "Scrum Master",
+    "teams": [
+      {
+        "id": "f98a9cb1-06d2-4acb-8bc0-a41e589d79e6",
+        "name": "Team Alpha",
+        "role": "Analyst",
+        "startDate": "2015-07-23T00:00:00",
+        "endDate": "2016-08-15T00:00:00"
+      },
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Scrum Master",
+        "startDate": "2016-07-14T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "Machine Learning",
+      "Agile",
+      "Microservices"
+    ],
+    "tools": [
+      "Figma",
+      "Jira",
+      "Neo4j",
+      "Postman"
+    ]
+  },
+  {
+    "firstName": "Ivy",
+    "lastName": "Anderson",
+    "hiredIn": "2019-09-13T00:00:00",
+    "birthDate": "1991-02-17T00:00:00",
+    "genre": "non-binary",
+    "role": "Scrum Master",
+    "teams": [
+      {
+        "id": "edf355b6-dcfb-4323-b94e-d31249404819",
+        "name": "Team Alpha",
+        "role": "Project Manager",
+        "startDate": "2016-06-01T00:00:00",
+        "endDate": "2017-07-11T00:00:00"
+      },
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Scrum Master",
+        "startDate": "2023-07-10T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "Microservices"
+    ],
+    "tools": [
+      "GitHub",
+      "Kubernetes"
+    ]
+  },
+  {
+    "firstName": "Hank",
+    "lastName": "Johnson",
+    "hiredIn": "2017-01-29T00:00:00",
+    "birthDate": "1984-03-23T00:00:00",
+    "genre": "non-binary",
+    "role": "Scrum Master",
+    "teams": [
+      {
+        "id": "82bd1451-a316-4409-8e66-568377778c88",
+        "name": "Team Alpha",
+        "role": "Designer",
+        "startDate": "2020-02-04T00:00:00",
+        "endDate": "2020-09-05T00:00:00"
+      },
+      {
+        "id": "b7367d2e-8fbc-4122-a38c-2ad1419059ec",
+        "name": "Team Beta",
+        "role": "Scrum Master",
+        "startDate": "2016-09-07T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "Databases",
+      "Agile",
+      "Machine Learning",
+      "DevOps"
+    ],
+    "tools": [
+      "GitHub",
+      "Figma",
+      "Jira"
+    ]
+  },
+  {
+    "firstName": "Ivy",
+    "lastName": "Anderson",
+    "hiredIn": "2010-01-21T00:00:00",
+    "birthDate": "1974-12-28T00:00:00",
+    "genre": "male",
+    "role": "Project Manager",
+    "teams": [
+      {
+        "id": "b7367d2e-8fbc-4122-a38c-2ad1419059ec",
+        "name": "Team Beta",
+        "role": "Project Manager",
+        "startDate": "2023-01-02T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "Machine Learning",
+      "Microservices",
+      "UI/UX",
+      "Agile"
+    ],
+    "tools": [
+      "Kubernetes",
+      "Docker"
+    ]
+  },
+  {
+    "firstName": "Frank",
+    "lastName": "Brown",
+    "hiredIn": "2011-11-11T00:00:00",
+    "birthDate": "1993-06-02T00:00:00",
+    "genre": "female",
+    "role": "Analyst",
+    "teams": [
+      {
+        "id": "b7367d2e-8fbc-4122-a38c-2ad1419059ec",
+        "name": "Team Beta",
+        "role": "Project Manager",
+        "startDate": "2018-11-25T00:00:00",
+        "endDate": "2020-03-28T00:00:00"
+      },
+      {
+        "id": "74d03257-f9c6-4e10-8b9c-45bd332f416c",
+        "name": "Team Delta",
+        "role": "Project Manager",
+        "startDate": "2020-01-10T00:00:00",
+        "endDate": "2021-07-20T00:00:00"
+      }
+    ],
+    "topics": [
+      "Machine Learning",
+      "Security"
+    ],
+    "tools": [
+      "Postman",
+      "Neo4j",
+      "GitHub",
+      "Jira"
+    ]
+  },
+  {
+    "firstName": "David",
+    "lastName": "Taylor",
+    "hiredIn": "2011-09-05T00:00:00",
+    "birthDate": "1998-11-17T00:00:00",
+    "genre": "female",
+    "role": "Analyst",
+    "teams": [
+      {
+        "id": "43df8be9-4220-441c-8092-a960acff9a4a",
+        "name": "Team Gamma",
+        "role": "Project Manager",
+        "startDate": "2022-10-26T00:00:00",
+        "endDate": "2023-07-12T00:00:00"
+      },
+      {
+        "id": "b7367d2e-8fbc-4122-a38c-2ad1419059ec",
+        "name": "Team Beta",
+        "role": "Analyst",
+        "startDate": "2018-05-06T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "UI/UX",
+      "Machine Learning"
+    ],
+    "tools": [
+      "GitHub",
+      "Neo4j"
+    ]
+  },
+  {
+    "firstName": "Jack",
+    "lastName": "Harris",
+    "hiredIn": "2019-09-16T00:00:00",
+    "birthDate": "1993-09-12T00:00:00",
+    "genre": "male",
+    "role": "Developer",
+    "teams": [
+      {
+        "id": "74d03257-f9c6-4e10-8b9c-45bd332f416c",
+        "name": "Team Delta",
+        "role": "Scrum Master",
+        "startDate": "2017-10-28T00:00:00",
+        "endDate": "2019-09-26T00:00:00"
+      },
+      {
+        "id": "b3dad9bb-185c-4dca-a929-d37771e2f193",
+        "name": "Team Alpha",
+        "role": "Developer",
+        "startDate": "2017-04-17T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "DevOps",
+      "Security"
+    ],
+    "tools": [
+      "Figma",
+      "Jira"
+    ]
+  },
+  {
+    "firstName": "Hank",
+    "lastName": "Smith",
+    "hiredIn": "2018-08-20T00:00:00",
+    "birthDate": "1983-10-21T00:00:00",
+    "genre": "female",
+    "role": "Scrum Master",
+    "teams": [
+      {
+        "id": "b7367d2e-8fbc-4122-a38c-2ad1419059ec",
+        "name": "Team Beta",
+        "role": "Scrum Master",
+        "startDate": "2020-12-22T00:00:00",
+        "endDate": null
+      }
+    ],
+    "topics": [
+      "UI/UX",
+      "Security"
+    ],
+    "tools": [
+      "GitHub"
+    ]
+  }
+]
