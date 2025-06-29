@@ -1,16 +1,25 @@
-import { Document } from '../model/Document';
-import { Neo4JAdapter } from '../adapter/Neo4JAdapter';
-import { v4 as uuid } from 'uuid';
+import { Document } from '../model/Document.js';
+import { Neo4JAdapter } from '../adapter/Neo4JAdapter.js';
+import KSUID from 'ksuid';
 
-export class DocumentRepository {
+class DocumentRepository {
   private neo4jAdapter: Neo4JAdapter;
   constructor() {
     this.neo4jAdapter = new Neo4JAdapter();
   }
 
+  public async getDocument(document: Document) {
+    return await this.neo4jAdapter.readSingle<Document>(
+      `//cypher
+      MATCH (d:Document {title: $title, authorId: $authorId}) RETURN d
+      `,
+      { title: document.title, authorId: document.authorId }
+    );
+  }
+
   public async createDocument(document: Document) {
     return await this.neo4jAdapter.runTransaction<Document>(
-      `
+      `//cypher
        WITH $title AS title,
             $id AS id,
             $fileUrl AS fileUrl,
@@ -44,7 +53,7 @@ export class DocumentRepository {
        RETURN doc, e
         `,
       {
-        id: uuid(),
+        id: KSUID.randomSync().string,
         title: document.title,
         fileUrl: document.fileUrl,
         topics: document.topics,
@@ -54,3 +63,5 @@ export class DocumentRepository {
     );
   }
 }
+
+export default new DocumentRepository();

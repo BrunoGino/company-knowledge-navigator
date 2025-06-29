@@ -1,3 +1,7 @@
 export class Company {
-  constructor(public name: string) {}
+  constructor(
+    public id: string,
+    public name: string,
+    public market: string
+  ) {}
 }
