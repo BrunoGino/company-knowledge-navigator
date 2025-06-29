@@ -10,6 +10,7 @@ services:
     command: sleep infinity
     depends_on:
       - db
+      - embeddings_db
     network_mode: service:db
 
   db:
@@ -18,15 +19,26 @@ services:
     environment:
       NEO4J_AUTH: neo4j/password123
     ports:
-      - "7474:7474"
-      - "7687:7687"
+      - '7474:7474'
+      - '7687:7687'
     volumes:
       - neo4j_data:/data/db
     networks:
       - devnet
 
+  embeddings_db:
+    image: chromadb/chroma:latest
+    restart: unless-stopped
+    ports:
+      - '8000:8000'
+    volumes:
+      - chroma_data:/data/embeddings_db
+    networks:
+      - devnet
+
 volumes:
   neo4j_data:
+  chroma_data:
 
 networks:
   devnet:
