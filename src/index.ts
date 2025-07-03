@@ -7,6 +7,7 @@ import { addEmployee } from './controller/employeeController.js';
 import { addCompany } from './controller/companyController.js';
 import { addDepartment } from './controller/departmentController.js';
 import { addTeam } from './controller/teamController.js';
+import multer from 'multer';
 
 const app = express();
 
@@ -14,7 +15,9 @@ const router = app.router;
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-router.post('/document', addDocument);
+const upload = multer({ dest: './tmp/documents' });
+
+router.post('/document', upload.single('doc'), addDocument);
 router.get('/document/search', searchDocument);
 router.post('/employee', addEmployee);
 router.post('/department', addDepartment);
