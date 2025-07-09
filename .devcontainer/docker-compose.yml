@@ -11,7 +11,8 @@ services:
     depends_on:
       - db
       - embeddings_db
-    network_mode: service:db
+    networks:
+      - devnet
 
   db:
     image: neo4j:2025.05-community

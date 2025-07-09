@@ -8,8 +8,8 @@ class DocumentRepository {
     this.neo4jAdapter = new Neo4JAdapter();
   }
 
-  public async getDocument(document: Document) {
-    return await this.neo4jAdapter.readSingle<Document>(
+  public async getDocument(document: Document): Promise<Document | undefined> {
+    return await this.neo4jAdapter.readSingle<Document | undefined>(
       `//cypher
       MATCH (d:Document {title: $title, authorId: $authorId}) RETURN d
       `,
@@ -17,7 +17,18 @@ class DocumentRepository {
     );
   }
 
-  public async createDocument(document: Document) {
+  public async getDocumentById(
+    documentId: string
+  ): Promise<Document | undefined> {
+    return await this.neo4jAdapter.readSingle(
+      `//cypher
+      MATCH (d:Document {id: $documentId}) RETURN d
+      `,
+      { documentId: documentId }
+    );
+  }
+
+  public async saveDocument(document: Document) {
     const result = (await this.neo4jAdapter.runTransaction<Document>(
       `//cypher
        WITH $title AS title,
@@ -28,7 +39,7 @@ class DocumentRepository {
             $authorId AS authorId,
             date() AS today
 
-       MERGE (doc:Document {
+       MERGE (d:Document {
         id: id,
         title: title,
         fileUrl: fileUrl,
@@ -36,24 +47,24 @@ class DocumentRepository {
         updatedAt: today
        })
 
-       WITH doc, topics, tools, authorId
+       WITH d, topics, tools, authorId
        UNWIND topics AS topicName
        MERGE (t:Topic {name: topicName})
-       MERGE (doc)-[:HAS_TOPIC]->(t)
+       MERGE (d)-[:HAS_TOPIC]->(t)
 
-       WITH doc, tools, authorId
+       WITH d, tools, authorId
        UNWIND tools AS toolName
        MERGE (tool:Tool {name: toolName})
-       MERGE (doc)-[:MENTIONS]->(tool)
+       MERGE (d)-[:MENTIONS]->(tool)
 
-       WITH doc, authorId
+       WITH d, authorId
        MATCH (e:Employee {id: authorId})
-       MERGE (doc)-[:AUTHORED_BY]->(e)
+       MERGE (d)-[:AUTHORED_BY]->(e)
 
-       RETURN doc, e
+       RETURN d
         `,
       {
-        id: KSUID.randomSync().string,
+        id: document.id ?? KSUID.randomSync().string,
         title: document.title,
         fileUrl: document.fileUrl,
         topics: document.topics,

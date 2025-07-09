@@ -2,6 +2,7 @@ import express from 'express';
 import {
   addDocument,
   searchDocument,
+  attachFileToDocument,
 } from './controller/documentController.js';
 import { addEmployee } from './controller/employeeController.js';
 import { addCompany } from './controller/companyController.js';
@@ -17,7 +18,12 @@ router.use(express.urlencoded({ extended: true }));
 
 const upload = multer({ dest: './tmp/documents' });
 
-router.post('/document', upload.single('doc'), addDocument);
+router.post('/document', addDocument);
+router.patch(
+  '/document/:documentId',
+  upload.single('doc'),
+  attachFileToDocument
+);
 router.get('/document/search', searchDocument);
 router.post('/employee', addEmployee);
 router.post('/department', addDepartment);

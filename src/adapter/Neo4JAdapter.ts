@@ -1,5 +1,11 @@
 import { auth, Driver, driver, QueryResult, RecordShape } from 'neo4j-driver';
 
+interface GenericShape<T> extends RecordShape {
+  d: {
+    properties: T;
+  };
+}
+
 export class Neo4JAdapter {
   private driver: Driver;
   private readonly databaseName: string;
@@ -12,17 +18,14 @@ export class Neo4JAdapter {
     this.databaseName = String(process.env.DATABASE_NAME);
   }
 
-  public async readSingle<Shape extends RecordShape>(
-    cypher: string,
-    args: Record<string, unknown>
-  ) {
+  public async readSingle<T>(cypher: string, args: Record<string, unknown>) {
     const session = this.driver.session({
       database: this.databaseName,
       defaultAccessMode: 'READ',
     });
 
     const result = await session.executeRead((transaction) => {
-      return transaction.run<Shape>(cypher, args);
+      return transaction.run<GenericShape<T>>(cypher, args);
     });
 
     console.log('result', result);
@@ -31,10 +34,10 @@ export class Neo4JAdapter {
     return parsedResult[0];
   }
 
-  public async runTransaction<Shape extends RecordShape>(
+  public async runTransaction<T>(
     cypher: string,
     args: Record<string, unknown>
-  ): Promise<Shape[] | Shape | undefined> {
+  ): Promise<T[] | T | undefined> {
     const session = this.driver.session({
       database: this.databaseName,
       defaultAccessMode: 'WRITE',
@@ -42,7 +45,7 @@ export class Neo4JAdapter {
 
     const transaction = session.beginTransaction();
     try {
-      const result = await transaction.run<Shape>(cypher, args);
+      const result = await transaction.run<GenericShape<T>>(cypher, args);
 
       await transaction.commit();
       const parsedResult = this.mapRecordsToShape(result);
@@ -56,11 +59,10 @@ export class Neo4JAdapter {
     }
   }
 
-  private mapRecordsToShape<Shape>(result: QueryResult<Shape>) {
+  private mapRecordsToShape<T>(result: QueryResult<GenericShape<T>>) {
+    result.records[0].get('d');
     return result.records.map((r) => {
-      return r.keys.reduce((obj, key) => {
-        return Object.assign(obj, { [key]: r.get(key) });
-      }, {} as Shape);
+      return r.get('d').properties;
     });
   }
 }
