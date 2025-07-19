@@ -3,7 +3,7 @@ import documentRepository from '../repository/DocumentRepository.js';
 import { Document } from '../model/Document.js';
 import { ChromaDBAdapter } from '../adapter/ChromaDBAdapter.js';
 import { TokenTextSplitter } from '@langchain/textsplitters';
-
+import fs from 'fs';
 import { PDFLoader } from '@langchain/community/document_loaders/fs/pdf';
 import openAIAdapter from '../adapter/OpenAIAdapter.js';
 
@@ -62,6 +62,12 @@ const attachFileToDocument = async (
 
   const embeddingsDb = new ChromaDBAdapter('company-documents');
   await embeddingsDb.addDocument(documentId, output, [{ fileType: 'pdf' }]);
+
+  fs.unlink(req.file.path, (error) => {
+    if (error) {
+      console.error('Failed to delete temp file', req.file.path);
+    }
+  });
 
   console.log(output);
   res.json();
