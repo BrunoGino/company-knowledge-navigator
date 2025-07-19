@@ -16,7 +16,13 @@ const router = app.router;
 router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
-const upload = multer({ dest: './tmp/documents' });
+const upload = multer({
+  dest: './tmp/documents',
+  limits: {
+    fileSize: 10 ** 8, // 100mb
+    files: 1,
+  },
+});
 
 router.post('/document', addDocument);
 router.patch(
