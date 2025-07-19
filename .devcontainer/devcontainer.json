@@ -1,8 +1,10 @@
 {
   "name": "nodejs-neo4j",
   "dockerComposeFile": "docker-compose.yml",
-  "workspaceFolder": "/workspaces/",
+  "workspaceFolder": "/workspace/company-knowledge-navigator",
   "service": "app",
+  "remoteUser": "node",
+  "containerUser": "node",
   "forwardPorts": [8080, 8000],
   "customizations": {
     "vscode": {
@@ -24,5 +26,6 @@
     "ghcr.io/devcontainers/features/github-cli:1": {
       "version": "latest"
     }
-  }
+  },
+  "postAttachCommand": "git config --global --add safe.directory /workspace/company-knowledge-navigator"
 }
