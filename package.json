@@ -11,7 +11,7 @@
   "description": "",
   "dependencies": {
     "@chroma-core/openai": "^0.1.7",
-    "@langchain/community": "^0.3.47",
+    "@langchain/community": "^0.3.49",
     "@langchain/core": "^0.3.61",
     "@langchain/textsplitters": "^0.1.0",
     "chromadb": "^3.0.5",
@@ -20,7 +20,7 @@
     "ksuid": "^3.0.0",
     "multer": "^2.0.1",
     "neo4j-driver": "5.28.1",
-    "openai": "^5.8.2",
+    "openai": "4.104.0",
     "pdf-parse": "^1.1.1",
     "pdfreader": "^3.0.7"
   },
@@ -36,6 +36,14 @@
     "prettier": "3.6.0",
     "typescript": "5.8.3",
     "typescript-eslint": "8.35.0"
+  },
+  "peerDependencies": {
+    "openai": "4.x"
+  },
+  "peerDependenciesMeta": {
+    "openai": {
+      "optional": true
+    }
   },
   "type": "module"
 }
