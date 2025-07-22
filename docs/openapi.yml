@@ -1,0 +1,52 @@
+openapi: '3.1.1'
+
+info:
+  title: 'Company Knowledge Navigator API'
+  description: 'Find every knowledge source from your company in a single place'
+  version: '0.1.0'
+  # termsOfService:
+  contact:
+    name: 'Company Knowledge Navigator API'
+    url: https://companyknowledgenavigator.com/api
+  license:
+    name: Apache License 2.0
+    identifier: Apache-2.0
+
+servers:
+  - url: https://api.companyknowledgenavigator.com/
+    description: Local server
+paths:
+  /company:
+    get:
+      summary: Get info about a company
+      description: Returns the data and metadata for an existing company and it's departments
+      parameters:
+        - name: Company ID
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                title: Sample
+                type: object
+                properties:
+                  placeholder:
+                    type: string
+                    description: Placeholder description
+        '404':
+          description: Not found response
+          content:
+            text/plain:
+              schema:
+                title: Company not found
+                type: string
+                examples:
+                  - 'Not found'
+      operationId: CompanyMetadata
+      tags:
+        - Company Metadata
