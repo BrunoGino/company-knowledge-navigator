@@ -18,7 +18,8 @@
         "streetsidesoftware.code-spell-checker",
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
-        "neo4j-extensions.neo4j-for-vscode"
+        "neo4j-extensions.neo4j-for-vscode",
+        "42Crunch.vscode-openapi"
       ]
     }
   },
