@@ -21,11 +21,7 @@ paths:
       summary: Get info about a company
       description: Returns the data and metadata for an existing company and it's departments
       parameters:
-        - name: Company ID
-          in: path
-          required: true
-          schema:
-            type: string
+        - $ref: '#/components/parameters/companyId'
       responses:
         '200':
           description: Successful response
@@ -50,3 +46,41 @@ paths:
       operationId: CompanyMetadata
       tags:
         - Company Metadata
+
+components:
+  parameters:
+    companyId:
+      name: Company identifier
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    businessSegments:
+      title: Business Segments
+      type: string
+      examples:
+        - 'Agriculture'
+        - 'Information Technology'
+        - 'Aircraft'
+    GetCompanyResponse:
+      title: Successful Company response
+      type: object
+      properties:
+        name:
+          $ref: '#components/schemas/CompanyName'
+        addedIn:
+          $ref: '#components/schemas/CompanyAddDate'
+        businessSegments:
+          type: array
+          items:
+            $ref: '#components/schemas/BusinessSegments'
+          description: Business segments the company works in
+        executiveStaff:
+          type: array
+          items:
+            $ref: '#components/schemas/ExecutiveStaff'
+        departments:
+          type: array
+          items:
+            $ref: '#components/schemas/ExecutiveStaff'
